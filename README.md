@@ -1,64 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#Test Laravel 
+###Creación de nuevo proyecto
+Se creó la carpeta llamada test Laravel dentro de la carpeta de xampp, paso seguido se abrió la consola y se creó un nuevo proyecto en Laravel como se puede ver a continuación:
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img.PNG?raw=true)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Posteriormente luego de la descarga se abrió el editor de código y se puso a correr la terminal por medio del comando `php artisan serve`
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img2.PNG?raw=true)
 
-## About Laravel
+Se ubicó la carpeta test, que contiene la carpeta feature y unit y los archivos de php createsApplication y testCase.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Posteriormente usamos el comando `./vendor/bin/phpunit` para la ejecución de pruebas unitarias 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El comando php artisan test nos muestra los métodos que han funcionado correctamente
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img3.PNG?raw=true)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Luego con el comando `php artisan make:test UserTest` se creó un archivo nuevo dentro de la capeta feature
 
-## Learning Laravel
+Posteriormente verificamos que este nuevo archivo de test esté funcionando correctamente
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Se abrió el archivo UserTest y se agrego la palabra “test” después del “/” 
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img4.PNG?raw=true)
+Lo cual en el momento nos arroja un error al correr el comando el la terminal.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+###Creando test unitarios 
+Por medio del siguiente comando `php artisan make: test UserTest --unit`
+ 
+Posteriormente se elimina la palabra “test”que se había agregado 
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/Captura.PNG?raw=true)
 
-## Laravel Sponsors
+Luego se vuelven a ejecutar las pruebas con el comando `php artisan test`
+ 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+###Creando interfaces de usuario
+Por medio del comando `composer require laravel/ui`
 
-### Premium Partners
+Posteriormente se crea una interfaz de autenticación reactiva, por medio del comando `php artisan ui react –auth`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Luego se instalan las dependencias por medio de los comandos `npm install && npm run dev `desde la consola
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img5.PNG?raw=true)
 
-## Contributing
+###Creando base de datos
+Se ingresó a phpMyAdmin y se creó la base de datos llamada “testlaravel”
+ 
+También se verifico en el archivo .env que el nombre de la base de datos sea el correcto
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Posteriormente se realiza la migración a la base de datos por medio del comando php artisan migrate
 
-## Code of Conduct
+Se ingresó al archivo UserTest de la carpeta Unit y se borró la función que se encontraba en él y se sustituyó por la siguiente:
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img6.PNG?raw=true)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+También se modificó la ruta que tenía en la parte superior del archivo
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img8.PNG?raw=true)
+Y se procedió a ejecutar las pruebas
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+También se añadió la función test_user_duplication la cual nos ayuda a que los datos de los usuarios no se repitan
+![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img7.PNG?raw=true)
+Luego se realiza la prueba nuevamente con el comando `php artisan test`
+ 
