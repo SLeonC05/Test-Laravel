@@ -1,5 +1,6 @@
-#Test Laravel 
-###Creación de nuevo proyecto
+# Test Laravel 
+
+### Creación de nuevo proyecto
 Se creó la carpeta llamada test Laravel dentro de la carpeta de xampp, paso seguido se abrió la consola y se creó un nuevo proyecto en Laravel como se puede ver a continuación:
 
 ![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img.PNG?raw=true)
@@ -26,7 +27,7 @@ Se abrió el archivo UserTest y se agrego la palabra “test” después del “
 
 Lo cual en el momento nos arroja un error al correr el comando el la terminal.
 
-###Creando test unitarios 
+### Creando test unitarios 
 Por medio del siguiente comando `php artisan make: test UserTest --unit`
  
 Posteriormente se elimina la palabra “test”que se había agregado 
@@ -36,7 +37,7 @@ Posteriormente se elimina la palabra “test”que se había agregado
 Luego se vuelven a ejecutar las pruebas con el comando `php artisan test`
  
 
-###Creando interfaces de usuario
+### Creando interfaces de usuario
 Por medio del comando `composer require laravel/ui`
 
 Posteriormente se crea una interfaz de autenticación reactiva, por medio del comando `php artisan ui react –auth`
@@ -45,7 +46,7 @@ Luego se instalan las dependencias por medio de los comandos `npm install && npm
 
 ![](https://github.com/SLeonC05/Test-Laravel/blob/master/Img/img5.PNG?raw=true)
 
-###Creando base de datos
+### Creando base de datos
 Se ingresó a phpMyAdmin y se creó la base de datos llamada “testlaravel”
  
 También se verifico en el archivo .env que el nombre de la base de datos sea el correcto
